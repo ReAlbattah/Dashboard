@@ -1,0 +1,90 @@
+:root {
+    --main-radius: 5px;
+    --main-padding: 5px;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+  }
+  
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.3fr 1fr 1fr 0fr;
+    grid-template-rows: 0.2fr 1fr 1.2fr 1.2fr;
+    grid-template-areas:
+      "sidebar nav nav nav"
+      "sidebar content1 content2 content3"
+      "sidebar main main main"
+      "sidebar main main main";
+    grid-gap: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #274C77;
+    text-align: center;
+    align-content: center;
+    margin-right:1rem;
+  }
+  
+  nav {
+    background: #ffffff;
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  main {
+    background: #E7ECEF;
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  #sidebar {
+    background: #274C77;
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  #content1 {
+    background: #ffffff;
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    
+  }
+  
+  #content2 {
+    background: #ffffff;
+    grid-area: content2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    place-items: center stretch;
+  }
+  
+  
+  a {
+    text-align: center;
+    display: block;
+    font-family: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1rem;
+  }
+  
+  @media only screen and (max-width: 550px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr 0.4fr 4fr 4fr 10fr 0fr 0fr;
+      grid-template-areas:
+        "nav"
+        "sidebar"
+        "content1"
+        "content2"
+        "main"
+        ;
+    }
+  }
+  
